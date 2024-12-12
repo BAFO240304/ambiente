@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan de Aprovechamiento de Residuos - DPW</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Eco Gestión</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#objetivos">Objetivos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#estrategias">Estrategias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#preguntas">Preguntas</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#impacto">Impacto</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="hero-section text-white">
+    <div class="container">
+      <h1 class="display-4 mb-4">Plan Integral de Aprovechamiento de Residuos</h1>
+      <p class="lead mb-5">Transformando desafíos ambientales en oportunidades sostenibles</p>
+    </div>
+  </header>
+  <section id="objetivos" class="container py-5">
+    <h2 class="section-title text-center">Nuestros Objetivos</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card eco-card h-100 text-center p-4">
+          <div class="eco-icon">♻️</div>
+          <h4 class="card-title">Reducción</h4>
+          <p class="card-text">Minimizar el consumo de recursos y generar el mínimo desperdicio posible.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card eco-card h-100 text-center p-4">
+          <div class="eco-icon">🌍</div>
+          <h4 class="card-title">Concienciación</h4>
+          <p class="card-text">Educar y motivar a la comunidad sobre prácticas sostenibles.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card eco-card h-100 text-center p-4">
+          <div class="eco-icon">🌱</div>
+          <h4 class="card-title">Transformación</h4>
+          <p class="card-text">Convertir residuos en recursos mediante procesos innovadores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="estrategias" class="bg-light py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Estrategias 5R</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="process-timeline">
+            <!-- Fila 1: Reducir -->
+            <div class="row timeline-item">
+              <div class="col-md-6">
+                <div class="timeline-content d-flex">
+                  <img src="img/reducir.png" alt="Reducir" class="img-fluid w-50 me-4">
+                  <div>
+                    <h4>Reducir</h4>
+                    <p>Disminuir el consumo innecesario de recursos y materiales.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fila 2: Reutilizar -->
+            <div class="row timeline-item">
+              <div class="col-md-6 offset-md-6">
+                <div class="timeline-content d-flex flex-md-row-reverse">
+                  <img src="img/reutilizar.png" alt="Reutilizar" class="img-fluid w-50 ms-4">
+                  <div>
+                    <h4>Reutilizar</h4>
+                    <p>Extender la vida útil de productos y materiales antes de descartarlos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fila 3: Reciclar -->
+            <div class="row timeline-item">
+              <div class="col-md-6">
+                <div class="timeline-content d-flex">
+                  <img src="img/reciclar.png" alt="Reciclar" class="img-fluid w-50 me-4">
+                  <div>
+                    <h4>Reciclar</h4>
+                    <p>Transformar materiales para crear nuevos productos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fila 4: rechazar-->
+            <div class="row timeline-item">
+              <div class="col-md-6 offset-md-6">
+                <div class="timeline-content d-flex flex-md-row-reverse">
+                  <img src="img/rechazar.png" alt="Rechazar" class="img-fluid w-50 ms-4">
+                  <div>
+                    <h4>Rechazar</h4>
+                    <p>Evitar productos desechables y de un solo uso para reducir el impacto ambiental.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fila 5: reparar -->
+            <div class="row timeline-item">
+              <div class="col-md-6">
+                <div class="timeline-content d-flex">
+                  <img src="img/reparar.jpeg" alt="Reparar" class="img-fluid w-50 me-4">
+                  <div>
+                    <h4>Reparar</h4>
+                    <p>Dar una segunda vida a los objetos dañados en lugar de desecharlos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="preguntas" class="container py-5">
+    <h2 class="section-title text-center">Preguntas Frecuentes</h2>
+    <div class="accordion" id="faqAccordion">
+      <!-- Pregunta 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo">
+            ¿Qué materiales se pueden reciclar?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Plásticos, papeles, metales y electrónicos son algunos de los materiales que aceptamos en nuestras
+            instalaciones.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree">
+            ¿Dónde puedo dejar los materiales reciclables?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Puedes dejar tus materiales reciclables en los puntos de recolección establecidos en nuestras instalaciones
+            o en los contenedores habilitados para tal fin en tu comunidad.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseFour">
+            ¿Qué tipo de productos reutilizables recomiendan usar?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Recomendamos el uso de botellas, recipientes, bolsas y utensilios reutilizables de materiales duraderos como
+            acero inoxidable, vidrio o bambú.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseFive">
+            ¿Cómo puedo reducir mi consumo energético en el día a día?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Puedes reducir tu consumo energético apagando los dispositivos cuando no los uses, utilizando bombillas de
+            bajo consumo, y evitando el uso innecesario de aire acondicionado o calefacción.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseSix">
+            ¿Puedo traer residuos electrónicos para reciclar?
+          </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Sí, puedes traer pequeños dispositivos electrónicos como teléfonos, cables y baterías para su reciclaje en
+            nuestros puntos de recolección.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 7 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseSeven">
+            ¿Es posible organizar un evento de limpieza en mi comunidad?
+          </button>
+        </h2>
+        <div id="collapseSeven" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Sí, puedes coordinar un evento de limpieza contactando a nuestro equipo. Te proporcionaremos guantes, bolsas
+            y apoyo logístico.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 8 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEight">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseEight">
+            ¿El programa incluye la recolección de residuos orgánicos?
+          </button>
+        </h2>
+        <div id="collapseEight" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Actualmente, nos centramos en la recolección de residuos reciclables, pero pronto incorporaremos el
+            reciclaje de residuos orgánicos.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 9 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingNine">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseNine">
+            ¿Cómo puedo saber si un material es reciclable?
+          </button>
+        </h2>
+        <div id="collapseNine" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Los materiales reciclables generalmente tienen símbolos de reciclaje o instrucciones claras sobre su
+            disposición. Si tienes dudas, puedes consultarnos directamente.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 10 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTen">
+            ¿Puedo donar productos reutilizables que ya no utilizo?
+          </button>
+        </h2>
+        <div id="collapseTen" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Sí, aceptamos donaciones de productos reutilizables. Puedes entregarlos en nuestras oficinas o en los puntos
+            de recolección disponibles.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 11 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEleven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseEleven">
+            ¿Qué alternativas existen para evitar los plásticos de un solo uso?
+          </button>
+        </h2>
+        <div id="collapseEleven" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Puedes optar por productos reutilizables como bolsas de tela, botellas de acero inoxidable, y utensilios de
+            bambú, además de evitar productos en envases plásticos innecesarios.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 12 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwelve">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwelve">
+            ¿Es necesario registrarse para participar en las actividades de reciclaje?
+          </button>
+        </h2>
+        <div id="collapseTwelve" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            No es necesario registrarse para participar en las actividades, pero si deseas recibir notificaciones sobre
+            eventos y actividades, te invitamos a registrarte en nuestro sitio web.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 13 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThirteen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThirteen">
+            ¿Cuáles son los beneficios ambientales de reducir el consumo de papel?
+          </button>
+        </h2>
+        <div id="collapseThirteen" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Reducir el consumo de papel ayuda a conservar los bosques, reduce la contaminación por residuos y disminuye
+            la huella de carbono asociada con la producción de papel.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 14 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFourteen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseFourteen">
+            ¿Puedo involucrar a mis amigos y familiares en el programa?
+          </button>
+        </h2>
+        <div id="collapseFourteen" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Sí, todos son bienvenidos a participar. Puedes invitarlos a unirse a nuestras actividades y ayudarnos a
+            difundir el programa.
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta 15 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFifteen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseFifteen">
+            ¿Cómo puedo hacer un seguimiento del impacto de mis acciones sostenibles?
+          </button>
+        </h2>
+        <div id="collapseFifteen" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Puedes hacer un seguimiento de tus acciones a través de nuestras plataformas, donde podrás ver estadísticas
+            sobre el impacto de tus contribuciones al programa.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="cta" class="text-center py-5" style="background: var(--accent-color); color: white;">
+    <div class="container" style="max-width: 90%; margin: 0 auto;">
+      <h2>¡Juntos por un futuro más verde!</h2>
+      <p>El momento de actuar es ahora. Cada pequeño gesto cuenta para preservar nuestro planeta. Únete a la causa y sigamos las 5Rs para reducir nuestro impacto ambiental:</p>
+      <p><strong>Reducir</strong> el consumo de recursos, <strong>Reutilizar</strong> todo lo que sea posible, <strong>Reciclar</strong> nuestros desechos, <strong>Rechazar</strong> lo innecesario, y <strong>Reparar</strong> lo que podemos antes de desecharlo.</p>
+    </div>
+  </section>  
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p>© 2024 Programa de Diseño y Programación Web</p>
+      <p>Comprometidos con un futuro más sostenible</p>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
