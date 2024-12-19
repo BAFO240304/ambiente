@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,193 @@
     rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="estilo.css">
+  <style>
+    /* Contenedor estilizado */
+    .styled-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 90%;
+      margin: auto;
+      background: linear-gradient(135deg, #7bc043, #3b7d33);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 128, 0, 0.2);
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Estilo del título */
+    .animated-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 1s ease-out, colorPulse 3s infinite alternate;
+    }
+
+    /* Animación de entrada */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Efecto de pulso en el color */
+    @keyframes colorPulse {
+      0% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #7bc043, 0 0 30px #3b7d33;
+      }
+
+      100% {
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #7bc043, 0 0 40px #3b7d33;
+      }
+    }
+
+    /* Fondo animado adicional (opcional) */
+    .styled-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15), rgba(0, 128, 0, 0.05));
+      animation: rotateBg 6s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes rotateBg {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .gallery-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      padding: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .close-button {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .navigation-button {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+
+    #prev-button {
+      left: 1rem;
+    }
+
+    #next-button {
+      right: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .modal {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -23,6 +210,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#objetivos">Objetivos</a></li>
           <li class="nav-item"><a class="nav-link" href="#estrategias">Estrategias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria_imagenes">Galeria</a></li>
           <li class="nav-item"><a class="nav-link" href="#preguntas">Preguntas</a></li>
           <!-- <li class="nav-item"><a class="nav-link" href="#impacto">Impacto</a></li> -->
         </ul>
@@ -130,6 +318,79 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <div class="styled-container" id="galeria_imagenes">
+    <h3 class="animated-title">Impacto de la Contaminación</h3>
+  </div>
+
+  <div class="gallery-container">
+    <div class="gallery-grid" id="gallery">
+      <!-- Usando imágenes de placeholder para demostración -->
+      <div class="gallery-item">
+        <img src="contaminacion/1 (1).jpeg" alt="Imagen 1">
+      </div>
+      <div class="gallery-item">
+        <img src="contaminacion/1 (2).jpeg" alt="Imagen 2">
+      </div>
+      <div class="gallery-item">
+        <img src="contaminacion/1 (3).jpeg" alt="Imagen 3">
+      </div>
+      <div class="gallery-item">
+        <img src="contaminacion/1 (4).jpeg" alt="Imagen 4">
+      </div>
+      <div class="gallery-item">
+        <img src="contaminacion/1 (5).jpeg" alt="Imagen 5">
+      </div>
+      <div class="gallery-item">
+        <img src="contaminacion/1 (7).jpeg" alt="Imagen 5">
+      </div>
+      <div class="gallery-item">
+        <img src="contaminacion/1 (8).jpeg" alt="Imagen 5">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <button class="close-button" id="close-modal">&times;</button>
+    <button class="navigation-button" id="prev-button">&lt;</button>
+    <button class="navigation-button" id="next-button">&gt;</button>
+    <img class="modal-content" id="modal-image">
+  </div>
+
+  <section>
+    <div class="styled-container">
+      <h3 class="animated-title">Acciones de Nuestro Equipo</h3>
+    </div>
+    <div class="gallery-container">
+      <div class="gallery-grid" id="gallery">
+        <!-- Usando imágenes de placeholder para demostración -->
+        <div class="gallery-item">
+          <img src="combatir/2 (1).jpeg" alt="Imagen 1">
+        </div>
+        <div class="gallery-item">
+          <img src="combatir/2 (2).jpeg" alt="Imagen 3">
+        </div>
+        <div class="gallery-item">
+          <img src="combatir/2 (3).jpeg" alt="Imagen 4">
+        </div>
+        <div class="gallery-item">
+          <img src="combatir/2 (4).jpeg" alt="Imagen 5">
+        </div>
+        <div class="gallery-item">
+          <img src="combatir/2 (5).jpeg" alt="Imagen 5">
+        </div>
+        <div class="gallery-item">
+          <img src="combatir/2 (6).jpeg" alt="Imagen 5">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal">
+      <button class="close-button" id="close-modal">&times;</button>
+      <button class="navigation-button" id="prev-button">&lt;</button>
+      <button class="navigation-button" id="next-button">&gt;</button>
+      <img class="modal-content" id="modal-image">
     </div>
   </section>
   <section id="preguntas" class="container py-5">
@@ -350,16 +611,111 @@
   <section id="cta" class="text-center py-5" style="background: var(--accent-color); color: white;">
     <div class="container" style="max-width: 90%; margin: 0 auto;">
       <h2>¡Juntos por un futuro más verde!</h2>
-      <p>El momento de actuar es ahora. Cada pequeño gesto cuenta para preservar nuestro planeta. Únete a la causa y sigamos las 5Rs para reducir nuestro impacto ambiental:</p>
-      <p><strong>Reducir</strong> el consumo de recursos, <strong>Reutilizar</strong> todo lo que sea posible, <strong>Reciclar</strong> nuestros desechos, <strong>Rechazar</strong> lo innecesario, y <strong>Reparar</strong> lo que podemos antes de desecharlo.</p>
+      <p>El momento de actuar es ahora. Cada pequeño gesto cuenta para preservar nuestro planeta. Únete a la causa y
+        sigamos las 5Rs para reducir nuestro impacto ambiental:</p>
+      <p><strong>Reducir</strong> el consumo de recursos, <strong>Reutilizar</strong> todo lo que sea posible,
+        <strong>Reciclar</strong> nuestros desechos, <strong>Rechazar</strong> lo innecesario, y
+        <strong>Reparar</strong> lo que podemos antes de desecharlo.
+      </p>
     </div>
-  </section>  
+  </section>
   <footer class="bg-dark text-white text-center py-4">
     <div class="container">
       <p>© 2024 Programa de Diseño y Programación Web</p>
       <p>Comprometidos con un futuro más sostenible</p>
     </div>
   </footer>
+  <script>
+    const gallery = document.getElementById('gallery');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-image');
+    const closeBtn = document.getElementById('close-modal');
+    const prevBtn = document.getElementById('prev-button');
+    const nextBtn = document.getElementById('next-button');
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.gallery-item img');
+
+    function openModal(image, index) {
+      modal.style.display = 'flex';
+      modalImg.src = image.src;
+      currentImageIndex = index;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    function showNextImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      modalImg.src = images[currentImageIndex].src;
+    }
+
+    function showPrevImage() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentImageIndex].src;
+    }
+
+    // Event Listeners
+    images.forEach((image, index) => {
+      image.addEventListener('click', () => openModal(image, index));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    nextBtn.addEventListener('click', showNextImage);
+    prevBtn.addEventListener('click', showPrevImage);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!modal.style.display || modal.style.display === 'none') return;
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          showPrevImage();
+          break;
+        case 'ArrowRight':
+          showNextImage();
+          break;
+        case 'Escape':
+          closeModal();
+          break;
+      }
+    });
+
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    modal.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    modal.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const swipeLength = touchEndX - touchStartX;
+
+      if (Math.abs(swipeLength) > swipeThreshold) {
+        if (swipeLength > 0) {
+          showPrevImage();
+        } else {
+          showNextImage();
+        }
+      }
+    }
+  </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
